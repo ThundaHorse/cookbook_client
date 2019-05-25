@@ -1,4 +1,7 @@
-<center><h1><%= @recipe['title'] %></h1></center>
+<center>
+  <h1><%= @recipe['title'] %></h1>
+</center>
+
 <h3><%= @recipe['chef'] %></h3>
 <h4><%= @recipe['formatted']['prep_time'] %></h4>
 <h3>Ingredients</h3>
@@ -15,4 +18,11 @@
   <% end %>
 </ol>
 
-<center><img src="<%= @recipe['image_url'] %>" alt="<%= @recipe['title'] %>"></center>
+<div>
+  <a href="/client/recipes/<%= @recipe['id'] %>/edit">Edit</a>
+  <a href="/client/recipes/<%= @recipe['id'] %>" data-method="delete">Delete</a>
+</div>
+
+<center>
+  <img src="<%= @recipe['image_url'] %>" alt="<%= @recipe['title'] %>">
+</center>
