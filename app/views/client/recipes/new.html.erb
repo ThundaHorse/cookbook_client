@@ -1,20 +1,35 @@
-<h1>New Recipe Form</h1>
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <h1>New Recipe Form</h1>
+    <%= form_tag '/client/recipes', method: :post do  %>
+      <form>
+        <div class="form-group">
+          <label for="inputTitle">Title</label>
+          <input type="text" class="form-control" id="inputTitle" placeholder="Title" name="title">
+        </div>
 
-<%= form_tag '/client/recipes', method: :post do  %>
-  <div>
-    Title: <input type="text" name="title">
+        <div class="form-group">
+          <label for="inputPrepTime">Prep Time</label>
+          <input type="number" class="form-control" id="inputPrepTime" placeholder="Prep Time" name="prep_time">
+        </div>
+
+        <div class="form-group">
+          <label for="inputIngredients">Ingredients</label>
+          <input type="text" class="form-control" id="inputIngredients" placeholder="Ingredients" name="ingredients">
+        </div>
+
+        <div class="form-group">
+          <label for="inputDirections">Title</label>
+          <input type="text" class="form-control" id="inputDirections" placeholder="Directions" name="directions">
+        </div>
+
+        <div class="form-group">
+          <label for="inputImgeURL">Title</label>
+          <input type="text" class="form-control" id="inputImageURL" placeholder="Image URL" name="image_url">
+        </div>
+        
+        <button type="submit" class="btn btn-info">Create Recipe</button>
+      </fieldset>
+    <% end %>
   </div>
-  <div>
-    Prep Time: <input type="text" name="prep_time">
-  </div>
-  <div>
-    Ingredients: <input type="text" name="ingredients">
-  </div>
-  <div>
-    Directions: <input type="text" name="directions">
-  </div>
-  <div>
-    Image URL: <input type="text" name="image_url">
-  </div>
-  <input type="submit" value="Create Recipe">
-<% end %>
+</div>
